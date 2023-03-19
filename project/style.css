@@ -71,87 +71,236 @@ body{
 body *{
     box-sizing: border-box;
 }
-.container .header{
-    background:  hsl(180, 29%, 50%) url(/images/bg-header-desktop.svg) no-repeat center / cover;
-    width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Spartan:wght@500;700&display=swap");
+
+body {
+    font-family: "Spartan", sans-serif;
+}
+
+header {
     height: 150px;
+    background: hsl(180, 29%, 50%) url("images/bg-header-desktop.svg") center/cover;
 }
-.content .wrap{
-    max-width: 1440px;
-    padding: 0 60px;
-    margin: 50px auto;
-}
-.content .wrap .list{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+main {
     width: 100%;
-    background: #fff;
-    height: 150px;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 10px;
+    /* padding: 25px 1.5em 1em; */
+    min-height: calc(100vh - 150px);
+    background: hsl(180, 52%, 96%);
 }
-.search_wrap{
-    height: 80px;
-    max-width: 1440px;
-    margin: -40px auto 50px;
-    padding: 0 60px;
-}
-.search{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    padding: 20px 40px;
-}
-#btn_clear{
-    color: hsl(180, 29%, 50%);
-    cursor: pointer;
-}
-#btn_clear:hover{
-    text-decoration: underline;
-}
-.content .wrap .left{
-    display: flex;
-}
-.content .wrap .left .profile{
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-}
-.content .wrap .middle{
+
+.job-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+    padding-top: 3.125rem;
 }
-.content .wrap .middle .icon{
-    padding: 5px 10px;
-    background: hsl(180, 52%, 96%);
-    border-radius: 10px;
-    font-size: 12px;
+
+.job-list.filtering {
+    padding-top: 0rem;
 }
-.level{
-    font-size: 20px;
+
+.job-list .job {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1000px;
+    margin-bottom: 2.5rem;
+    padding: 1.875rem 1.25rem;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 5px 30px 10px hsl(180, 29%, 50%, 0.2);
+}
+
+.job-list .job.featured {
+    border-left: 5px solid hsl(180, 29%, 50%);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+.profile img {
+    width: 4.375rem;
+    height: 4.375rem;
+    margin-right: 1.25rem;
+}
+
+.profile .contents {
+}
+
+.profile .contents .top {
+    display: flex;
+    align-items: center;
+}
+.profile .contents .top .company {
+    margin-right: 1rem;
+    color: hsl(180, 29%, 50%);
+    font-size: 1rem;
     font-weight: 700;
 }
-.info{ color: #aaaaaa; font-weight: 500}
-
-.filter{
+.profile .contents .top .new {
+    margin-right: 0.4rem;
+    padding: 0.375rem 0.5rem;
+    color: #fff;
+    font-size: 0.625rem;
+    font-weight: 700;
+    border-radius: 14px;
+    background: hsl(180, 29%, 50%);
+    /* text-transform: uppercase; */
+}
+.profile .contents .top .feature {
     display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
+    padding: 0.375rem 0.5rem;
+    color: #fff;
+    font-size: 0.625rem;
+    font-weight: 700;
+    border-radius: 14px;
+    background-color: hsl(180, 14%, 20%);
+    text-transform: uppercase;
+}
+
+.profile .contents a.position {
+    display: inline-block;
+    margin: 0.75rem 0rem;
+    color: hsl(180, 14%, 20%);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+.profile .contents a.position:hover {
     color: hsl(180, 29%, 50%);
+}
+
+.profile .contents .bottom {
+    display: flex;
+}
+.profile .contents .bottom li {
+    position: relative;
+    margin-right: 1.875rem;
+    color: hsl(180, 8%, 52%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    list-style: disc;
+}
+.profile .contents .bottom li:first-child {
+    list-style: none;
+}
+
+.skills {
+    display: flex;
+    gap: 1rem;
+}
+.skills button {
+    /* margin-left: 1rem; */
+    padding: 0.5rem 0.625rem;
+    color: hsl(180, 29%, 50%);
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 2px;
+    background: hsl(180, 31%, 95%);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.skills button:first-child {
+    /* margin-left: 0px; */
+}
+.skills button:hover {
+    color: hsl(180, 52%, 96%);
+    background: hsl(180, 29%, 50%);
+}
+
+/* filter */
+.filter {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 30px 10px hsl(180, 29%, 50%, 0.2);
+    bottom: 2rem;
+    /* display: none; */
+}
+.filter .items {
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter .items .item {
+    display: flex;
+    height: 30px;
+    margin-right: 1rem;
     background: hsl(180, 52%, 96%);
-    margin-left: 10px;
-    padding: 5px 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.filter .items .item span {
+    padding: 0.5rem;
+    color: hsl(180, 29%, 50%);
+    font-size: 1rem;
+    font-weight: 700;
+}
+.filter .items .item button {
+    width: 30px;
+    text-align: center;
+    background: hsl(180, 29%, 50%);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.filter .items .item button img {
+    vertical-align: middle;
+}
+.filter .items .item button:hover {
+    background: hsl(180, 14%, 20%);
+}
+.filter .clear {
+    color: hsl(180, 8%, 52%);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 30px;
     cursor: pointer;
 }
-.filter:hover{
-    background: hsl(180, 29%, 50%);
-    color: #fff;
+.filter .clear:hover {
+    color: hsl(180, 29%, 50%);
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 945px) {
+    .job-list .job {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-list .job .profile {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: -62px;
+        border-bottom: 1px solid hsl(180, 8%, 52%);
+        padding-bottom: 15px;
+    }
+
+    .skills {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+
+    .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .profile .contents .top {
+        padding-top: 15px;
+    }
 }
